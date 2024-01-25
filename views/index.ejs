@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smartphone Information</title>
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #282c34; 
+      color: #61dafb;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #61dafb; 
+    }
+
+    .table {
+      background-color: #b5c0d2; 
+      color: #61dafb; 
+      border-radius: 10px;
+    }
+
+    .table th, .table td {
+      border-color: #61dafb; 
+    }
+
+    .table th {
+      background-color: #95a2b7;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #30475e; 
+    }
+
+    .table-hover tbody tr:hover {
+      background-color: #4a6572;
+    }
+
+    .action-buttons a,
+    .action-buttons form {
+      margin-right: 5px;
+    }
+
+    a {
+      color: #61dafb; 
+    }
+
+    a:hover {
+      color: #d1e3f8; 
+    }
+  </style>
+</head>
+<body>
+  <h1 class="mt-4">Smarthphone Spesification</h1>
+
+  <form action="/search" method="get" class="mb-3">
+    <div class="input-group">
+      <input type="text" class="form-control" id="search" name="q" placeholder="Search" value="<%= typeof searchFilter !== 'undefined' ? searchFilter : '' %>">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+
+  <a href="/add" class="btn btn-success add-button">Add Smartphone</a>
+
+  <a href="/compare" class="btn btn-info compare-button">Compare Smartphones</a>
+
+  
+  <table class="table table-bordered table-striped table-hover mt-3">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>SIM</th>
+        <th>Processor</th>
+        <th>RAM</th>
+        <th>Battery</th>
+        <th>Display</th>
+        <th>Camera</th>
+        <th>Card</th>
+        <th>OS</th>
+        <th>Actions</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(item => { %>
+        <tr>
+          <td><%= item.model %></td>
+          <td><%= item.price && typeof item.price === 'string' ? parseInt(item.price.replace(/,/g, '')) : item.price %></td>
+          <td><%= item.rating %></td>
+          <td><%= item.sim %></td>
+          <td><%= item.processor %></td>
+          <td><%= item.ram %></td>
+          <td><%= item.battery %></td>
+          <td><%= item.display %></td>
+          <td><%= item.camera %></td>
+          <td><%= item.card %></td>
+          <td><%= item.os %></td>
+          <td class="action-buttons">
+            
+            <a href="/update/<%= item._id %>" class="btn btn-warning btn-sm">Update</a>
+            <form action="/delete/<%= item._id %>" method="post" onsubmit="return confirm('Are you sure you want to delete this item?');">
+              
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

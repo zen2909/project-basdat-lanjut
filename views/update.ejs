@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Update Smartphone Data</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f9f9f9; 
+      color: #333; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #007bff; 
+    }
+
+    form {
+      background-color: #fff; 
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      color: #007bff; 
+      margin-top: 10px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      background-color: #f0f0f0; 
+      color: #333;
+      border: 1px solid #ddd; 
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007bff; 
+      color: #fff; 
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3; 
+    }
+
+    a {
+      color: #007bff; 
+      display: block;
+      margin-top: 10px;
+      text-decoration: none; 
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="mb-4">Update Smartphone Data</h1>
+
+  <form action="/update/<%= data._id %>" method="post">
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" value="<%= data.model %>" class="form-control" required>
+    
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" value="<%= data.price %>" class="form-control" required>
+
+    <label for="rating">Rating:</label>
+    <input type="text" id="rating" name="rating" value="<%= data.rating %>" class="form-control" required>
+
+    <label for="sim">SIM:</label>
+    <input type="text" id="sim" name="sim" value="<%= data.sim %>" class="form-control" required>
+
+    <label for="processor">Processor:</label>
+    <input type="text" id="processor" name="processor" value="<%= data.processor %>" class="form-control" required>
+
+    <label for="ram">RAM:</label>
+    <input type="text" id="ram" name="ram" value="<%= data.ram %>" class="form-control" required>
+
+    <label for="battery">Battery:</label>
+    <input type="text" id="battery" name="battery" value="<%= data.battery %>" class="form-control" required>
+
+    <label for="display">Display:</label>
+    <input type="text" id="display" name="display" value="<%= data.display %>" class="form-control" required>
+
+    <label for="camera">Camera:</label>
+    <input type="text" id="camera" name="camera" value="<%= data.camera %>" class="form-control" required>
+
+    <label for="card">Card:</label>
+    <input type="text" id="card" name="card" value="<%= data.card %>" class="form-control" required>
+
+    <label for="os">OS:</label>
+    <input type="text" id="os" name="os" value="<%= data.os %>" class="form-control" required>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+
+  <a href="/" class="btn btn-secondary mt-3">Back to dashboard</a>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

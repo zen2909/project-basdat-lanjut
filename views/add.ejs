@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Smartphone</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #282c34; 
+      color: #61dafb; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #61dafb; 
+    }
+
+    form {
+      background-color: #393e46; 
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    label {
+      color: #61dafb; 
+      margin-top: 10px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      background-color: #222831; 
+      color: #61dafb; 
+      border: 1px solid #61dafb; 
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #61dafb; 
+      color: #222831;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a90e2; 
+    }
+
+    a {
+      color: #61dafb;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .back-button {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #61dafb; 
+      color: #222831;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      background-color: #4a90e2; 
+    }
+  </style>
+</head>
+<body>
+  <h1 class="mb-4">Add Smartphone</h1>
+
+  <form action="/add" method="post">
+    <label for="model">Model:</label>
+    <input type="text" name="model" required>
+
+    <label for="price">Price:</label>
+    <input type="text" name="price" required>
+
+    <label for="rating">Rating:</label>
+    <input type="text" name="rating" required>
+
+    <label for="sim">SIM:</label>
+    <input type="text" name="sim" required>
+
+    <label for="processor">Processor:</label>
+    <input type="text" name="processor" required>
+
+    <label for="ram">RAM:</label>
+    <input type="text" name="ram" required>
+
+    <label for="battery">Battery:</label>
+    <input type="text" name="battery" required>
+
+    <label for="display">Display:</label>
+    <input type="text" name="display" required>
+
+    <label for="camera">Camera:</label>
+    <input type="text" name="camera" required>
+
+    <label for="card">Card:</label>
+    <input type="text" name="card" required>
+
+    <label for="os">OS:</label>
+    <input type="text" name="os" required>
+
+    <button type="submit">Add Smartphone</button>
+  </form>
+
+  <a href="/" class="back-button">Back to dashboard</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
